@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const StateContext = createContext();
 
@@ -31,8 +31,9 @@ export const ContextProvider = ({ children }) => {
     setThemeSettings(false);
   };
 
-  const handleClick = (clicked) =>
+  const handleClick = (clicked) => {
     setIsClicked({ ...initialState, [clicked]: true });
+  };
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
